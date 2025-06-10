@@ -467,17 +467,43 @@
         }
 
         /* ===== PROJECTS SECTION ===== */
+        .projects-section {
+            position: relative;
+        }
+        
         .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid */
-            gap: 30px; /* Space between cards */
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
             margin-top: 50px;
+            padding: 20px 0 40px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .projects-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .projects-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .projects-container::-webkit-scrollbar-thumb {
+            background-color: var(--accent);
+            border-radius: 20px;
         }
 
         .project-card {
+            flex: 0 0 auto;
+            width: 350px;
+            scroll-snap-align: start;
             background: var(--card-bg);
             border-radius: 15px;
-            overflow: hidden; /* Contain child elements */
+            overflow: hidden;
             transition: var(--transition);
             position: relative;
         }
@@ -530,6 +556,42 @@
             padding: 5px 15px;
             border-radius: 20px; /* Pill shape */
             font-size: 0.85rem;
+        }
+
+        .view-all-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .scroll-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .scroll-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .scroll-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .scroll-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -735,6 +797,10 @@
                 flex-direction: column; /* Stack buttons */
                 align-items: center;
             }
+            
+            .scroll-controls {
+                display: none;
+            }
         }
 
         @media (max-width: 576px) {
@@ -763,6 +829,10 @@
             
             .timeline-date {
                 margin-top: 10px; /* Spacing for stacked layout */
+            }
+
+            .project-card {
+                width: 300px;
             }
         }
     </style>
@@ -834,9 +904,9 @@
 
              <p class="section-subtitle fade-in">My technical skills include C++, Python, Arduino, Raspberry Pi, and tools like MATLAB and MultiSIM. I’ve applied these in a wide range of hands-on projects, blending theoretical knowledge with practical experience. Whether it’s developing low-level hardware solutions or writing efficient software. I’m passionate about learning new technologies and tackling complex engineering challenges.</p>
                 
-             <p class="section-subtitle fade-in">I’m actively seeking entry-level opportunities where I can continue to grow as a computer engineer and contribute to innovative, interdisciplinary projects.</p> -->
+             <p class="section-subtitle fade-in">I’m actively seeking entry-level opportunities where I can continue to grow as a computer engineer and contribute to innovative, interdisciplinary projects.</p>
             
-            <!-- <div class="about-content">
+            <div class="about-content">
                 <div class="about-text fade-in">
                     <h3 class="about-title">Who am I?</h3>
                     <p class="about-desc">I'm a passionate Full Stack Developer based in India, specializing in building exceptional digital experiences. With a strong foundation in both front-end and back-end technologies, I create seamless, responsive web applications.</p>
@@ -862,9 +932,9 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ===== EXPERIENCE & EDUCATION SECTION ===== -->
     <!-- Timeline of professional work and education history -->
@@ -1100,6 +1170,9 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </section>

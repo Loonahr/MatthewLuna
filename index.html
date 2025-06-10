@@ -1122,58 +1122,123 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
         <div class="container">
             <h2 class="section-title fade-in">My Projects</h2>
             
-            <div class="projects-container">
+            <div class="projects-container" id="projectsContainer">
+                <!-- Project 1 -->           
                 <div class="project-card fade-in">
-                    <div class="project-img">ECOMM</div>
+                    <div class="project-img">EMBED</div>
                     <div class="project-content">
-                        <h3 class="project-title">E-commerce Platform</h3>
-                        <p class="project-desc">A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.</p>
+                        <h3 class="project-title">Embedded Systems Control</h3>
+                        <p class="project-desc">Developed an embedded control system using Arduino and Raspberry Pi for environmental monitoring.</p>
                         
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">ML</div>
+                    <div class="project-content">
+                        <h3 class="project-title">ML Pattern Recognition</h3>
+                        <p class="project-desc">Created a machine learning model to recognize patterns in sensor data for predictive maintenance.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">MATLAB</span>
+                        </div>
+                        
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">DIGI</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Digital Design System</h3>
+                        <p class="project-desc">Designed a digital logic system using VHDL for FPGA implementation and verification.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">VHDL</span>
+                            <span class="tech-tag">FPGA</span>
+                            <span class="tech-tag">MultiSIM</span>
+                        </div>
+                        
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">IOT</div>
+                    <div class="project-content">
+                        <h3 class="project-title">IoT Home Automation</h3>
+                        <p class="project-desc">Built a home automation system with remote control capabilities using IoT technologies.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Raspberry Pi</span>
                             <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
                         </div>
                         
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
-                
+
+                <!-- Project 5 -->
                 <div class="project-card fade-in">
-                    <div class="project-img">TASK</div>
+                    <div class="project-img">COMM</div>
                     <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
-                        <p class="project-desc">A productivity application that helps teams manage tasks and collaborate in real-time.</p>
+                        <h3 class="project-title">Communication Protocol</h3>
+                        <p class="project-desc">Implemented a custom communication protocol for microcontroller-to-microcontroller data transfer.</p>
                         
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Embedded C</span>
+                            <span class="tech-tag">UART</span>
                         </div>
                         
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
-                
+
+                <!-- Project 6 -->
                 <div class="project-card fade-in">
-                    <div class="project-img">WEATHER</div>
+                    <div class="project-img">ROBO</div>
                     <div class="project-content">
-                        <h3 class="project-title">Weather Dashboard</h3>
-                        <p class="project-desc">A responsive weather application that displays current and forecasted weather data for any location.</p>
+                        <h3 class="project-title">Robotic Control System</h3>
+                        <p class="project-desc">Developed a robotic control system using PID algorithms for precise motor control.</p>
                         
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API Integration</span>
-                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">PID Control</span>
+                            <span class="tech-tag">Arduino</span>
                         </div>
                         
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
-
-
-
             </div>
+
+            <div class="scroll-controls">
+                <button class="scroll-btn" id="scrollLeft" aria-label="Scroll left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-btn" id="scrollRight" aria-label="Scroll right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="view-all-container fade-in">
+                <a href="projects.html" class="btn">View All Projects</a>
+            </div>
+
         </div>
     </section>
 
@@ -1182,7 +1247,6 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
     <section id="contact">
         <div class="container">
             <h2 class="section-title fade-in">Get In Touch</h2>
-            <p class="section-subtitle fade-in"></p>
             
             <div class="contact-container">
                 <div class="contact-info">
@@ -1339,6 +1403,47 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
         fadeElements.forEach(fader => {
             appearOnScroll.observe(fader);
         });
+    
+        // ===== PROJECTS SCROLLING =====
+        const projectsContainer = document.getElementById('projectsContainer');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+        
+        // Function to update scroll button states
+        function updateScrollButtons() {
+            // Disable left button if at beginning
+            scrollLeftBtn.disabled = projectsContainer.scrollLeft <= 0;
+            
+            // Disable right button if at end (with 10px tolerance)
+            scrollRightBtn.disabled = projectsContainer.scrollLeft >= 
+                (projectsContainer.scrollWidth - projectsContainer.clientWidth - 10);
+        }
+        
+        // Scroll left functionality
+        scrollLeftBtn.addEventListener('click', function() {
+            projectsContainer.scrollBy({
+                left: -350, // Width of one card + gap
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll right functionality
+        scrollRightBtn.addEventListener('click', function() {
+            projectsContainer.scrollBy({
+                left: 350, // Width of one card + gap
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update button states on scroll
+        projectsContainer.addEventListener('scroll', updateScrollButtons);
+        
+        // Initialize button states
+        updateScrollButtons();
+        
+        // Update button states on window resize
+        window.addEventListener('resize', updateScrollButtons);
+    
     </script>
 </body>
 </html>

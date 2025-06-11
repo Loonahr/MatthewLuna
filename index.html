@@ -596,30 +596,38 @@
 
         /* ===== CONTACT SECTION ===== */
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+            display: flex; /* Changed from grid to flex */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
             gap: 50px; /* Space between columns */
         }
 
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Space between contact items */
+            display: flex; /* Changed to horizontal layout */
+            flex-direction: row; /* Items side by side */
+            flex-wrap: wrap; /* Wrap to next line if needed */
+            gap: 30px; /* Space between contact items */
+            flex: 1; /* Take available space */
+            min-width: 300px; /* Minimum width before wrapping */
         }
 
         .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px; /* Space between icon and text */
+            flex: 1; /* Each item takes equal space */
+            min-width: 250px; /* Minimum width before wrapping */
+            background: var(--card-bg); /* Add background */
+            padding: 25px; /* Add padding */
+            border-radius: 15px; /* Rounded corners */
+            transition: var(--transition); /* Smooth transition */
+            border-left: 3px solid var(--accent); /* Accent border */
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow for depth */
         }
 
         .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent); /* Accent color for icons */
-        }
-
-        .contact-text h3 {
-            margin-bottom: 5px;
+            font-size: 2rem; /* Slightly larger icon */
+            margin-bottom: 15px; /* Space below icon */
         }
 
         /* Contact form styling */
@@ -800,6 +808,14 @@
             
             .scroll-controls {
                 display: none;
+            }
+
+            .contact-info {
+                flex-direction: column; /* Stack vertically on mobile */
+            }
+    
+            .contact-item {
+                min-width: 100%; /* Full width on mobile */
             }
         }
 

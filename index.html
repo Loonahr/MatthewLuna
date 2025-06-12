@@ -596,38 +596,66 @@
 
         /* ===== CONTACT SECTION ===== */
         .contact-container {
-            display: flex; /* Changed from grid to flex */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            gap: 50px; /* Space between columns */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center; /* Center items horizontally */
         }
 
         .contact-info {
-            display: flex; /* Changed to horizontal layout */
-            flex-direction: row; /* Items side by side */
-            flex-wrap: wrap; /* Wrap to next line if needed */
-            gap: 30px; /* Space between contact items */
-            flex: 1; /* Take available space */
-            min-width: 300px; /* Minimum width before wrapping */
+            display: flex;
+            flex-direction: row; /* Horizontal layout */
+            flex-wrap: wrap;
+            gap: 50px; /* Space between contact items */
+            justify-content: center;
+            width: 150%;
         }
 
         .contact-item {
-            flex: 1; /* Each item takes equal space */
-            min-width: 250px; /* Minimum width before wrapping */
-            background: var(--card-bg); /* Add background */
-            padding: 25px; /* Add padding */
-            border-radius: 15px; /* Rounded corners */
-            transition: var(--transition); /* Smooth transition */
-            border-left: 3px solid var(--accent); /* Accent border */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+            padding: 25px;
+            transition: var(--transition);
+            border-radius: 12px;
+            background: transparent; /* Remove background */
+            border: none; /* Remove border */
         }
 
-        .contact-item:hover {
-            transform: translateY(-5px); /* Lift on hover */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        .contact-icon-container {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.1); /* Subtle accent background */
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon-container {
+            background: rgba(56, 189, 248, 0.2); /* Slightly stronger on hover */
+            transform: translateY(-5px);
         }
 
         .contact-icon {
-            font-size: 2rem; /* Slightly larger icon */
-            margin-bottom: 15px; /* Space below icon */
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .contact-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--accent);
+        }
+
+        .contact-text p {
+            color: var(--light);
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         /* Contact form styling */
@@ -811,11 +839,13 @@
             }
 
             .contact-info {
-                flex-direction: column; /* Stack vertically on mobile */
+                flex-direction: column;
+                align-items: center;
             }
     
             .contact-item {
-                min-width: 100%; /* Full width on mobile */
+                max-width: 100%;
+                width: 100%;
             }
         }
 
@@ -910,47 +940,6 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <!-- Personal background and professional summary -->
-    <!-- <section id="about">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-             <p class="section-subtitle fade-in">I’m a dedicated Computer Engineering with a strong foundation in both software development and hardware systems. I enjoy exploring all avenues related to computer engineering, from embedded systems and digital design to machine learning, signal processing, and microcontroller programming.</p>
-
-             <p class="section-subtitle fade-in">My technical skills include C++, Python, Arduino, Raspberry Pi, and tools like MATLAB and MultiSIM. I’ve applied these in a wide range of hands-on projects, blending theoretical knowledge with practical experience. Whether it’s developing low-level hardware solutions or writing efficient software. I’m passionate about learning new technologies and tackling complex engineering challenges.</p>
-                
-             <p class="section-subtitle fade-in">I’m actively seeking entry-level opportunities where I can continue to grow as a computer engineer and contribute to innovative, interdisciplinary projects.</p>
-            
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3 class="about-title">Who am I?</h3>
-                    <p class="about-desc">I'm a passionate Full Stack Developer based in India, specializing in building exceptional digital experiences. With a strong foundation in both front-end and back-end technologies, I create seamless, responsive web applications.</p>
-                    <p class="about-desc">My journey in web development started 5 years ago, and since then I've worked with various startups and established companies to ?bring their digital visions to life.</p>
-                    <p class="about-desc">When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or hiking in the mountains.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat-box fade-in">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                        <div class="stat-box fade-in">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-text">Projects Completed</div>
-                        </div>
-                        <div class="stat-box fade-in">
-                            <div class="stat-number">30+</div>
-                            <div class="stat-text">Happy Clients</div>
-                        </div>
-                        <div class="stat-box fade-in">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-text">Tech Skills</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- ===== EXPERIENCE & EDUCATION SECTION ===== -->
     <!-- Timeline of professional work and education history -->
     <section id="experience" class="experience">
@@ -971,11 +960,6 @@
                             <span class="timeline-date">Aug 2024 - May 2024</span>
                         </div>
                         <p class="timeline-desc">Coordinated 10+ monthly church events and maintained accurate records, while professionally welcoming 100+ visitors and addressing inquiries to foster a warm, organized environment.</p>
-                        <!-- <div class="timeline-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">AWS</span>
-                        </div> -->
                     </div>
                     
                     <div class="timeline-item">
@@ -987,28 +971,7 @@
                             <span class="timeline-date">Sept 2023 - Jan 2024</span>
                         </div>
                         <p class="timeline-desc">Coached and mentored 15 high school athletes by designing weekly practices, providing individualized feedback, and building technical, strategic, and sportsmanship skills to support long-term growth.</p>
-                        <!-- <div class="timeline-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">SASS</span>
-                        </div> -->
                     </div>
-                    
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div>
-                                <h4 class="timeline-position">Web Development Intern</h4>
-                                <p class="timeline-company">StartUp Ventures</p>
-                            </div>
-                            <span class="timeline-date">2018 - 2019</span>
-                        </div>
-                        <p class="timeline-desc">Assisted in developing and maintaining company websites. Created interactive UI components with JavaScript.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                        </div>
-                    </div> -->
                 </div>
                 
                 <!-- Education Column -->
@@ -1025,41 +988,7 @@
                         </div>
                         <p class="timeline-desc">Relevant Coursework: Computer Architecture, Computer Design, Microcomputer Systems, Digital State
 Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Soft/Hardware Integration</p>
-                        <!-- <div class="timeline-tech">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">UX Research</span>
-                        </div> -->
                     </div>
-                    
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div>
-                                <h4 class="timeline-position">B.Tech Computer Engineering</h4>
-                                <p class="timeline-company">IIT Delhi</p>
-                            </div>
-                            <span class="timeline-date">2012 - 2016</span>
-                        </div>
-                        <p class="timeline-desc">Graduated with honors. Developed campus navigation app that won university innovation award.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">Algorithms</span>
-                            <span class="tech-tag">Database Systems</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div>
-                                <h4 class="timeline-position">Web Development Certification</h4>
-                                <p class="timeline-company">freeCodeCamp</p>
-                            </div>
-                            <span class="timeline-date">2015</span>
-                        </div>
-                        <p class="timeline-desc">Completed comprehensive 300-hour coding curriculum covering full stack development.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -1095,37 +1024,65 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
                 
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fas fa-project-diagram"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="skill-name">VHDL</h3>
                 </div>
                 
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fab fa-node-js"></i>
+                        <i class="fab fa-github"></i>
                     </div>
-                    <h3 class="skill-name">Node.js</h3>
+                    <h3 class="skill-name">GitHub</h3>
                 </div>
                 
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fab fa-python"></i>
+                        <i class="fab fa-docker"></i>
                     </div>
-                    <h3 class="skill-name">Python</h3>
+                    <h3 class="skill-name">Docker</h3>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="skill-name">Vivado</h3>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="skill-name">Multisim</h3>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="skill-name">Raspberry Pi</h3>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-name">Arduino IDE</h3>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h3 class="skill-name">Word</h3>
                 </div>
                 
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-table"></i>
                     </div>
-                    <h3 class="skill-name">MongoDB</h3>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <h3 class="skill-name">Figma</h3>
+                    <h3 class="skill-name">Excel</h3>
                 </div>
             </div>
         </div>
@@ -1295,27 +1252,6 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
                         </div>
                     </div>
                 </div>
-                
-                <!-- <div class="contact-form fade-in">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div> -->
             </div>
         </div>
     </section>

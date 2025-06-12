@@ -436,16 +436,21 @@
         }
 
         /* ===== SKILLS SECTION ===== */
+        #skills {
+            padding-top: 50px; /* Reduced from 100px */
+            padding-bottom: 50px; /* Reduced from 100px */
+        }
+        
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-            gap: 15px; /* Space between cards */
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Responsive grid */
+            gap: 12px; /* Space between cards */
             margin-top: 50px;
         }
 
         .skill-card {
             background: var(--card-bg);
-            padding: 15px 15px;
+            padding: 12px 12px;
             border-radius: 15px;
             text-align: center;
             transition: var(--transition);
@@ -457,16 +462,21 @@
         }
 
         .skill-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent); /* Accent color for icons */
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .skill-name {
             font-weight: 600;
+            font-size: 0.9rem; /* Smaller text */
         }
 
         /* ===== PROJECTS SECTION ===== */
+        #projects {
+            padding-top: 50px; /* Reduced from 100px */
+        }
+
         .projects-section {
             position: relative;
         }
@@ -595,6 +605,10 @@
         }
 
         /* ===== CONTACT SECTION ===== */
+        #contact {
+            padding-top: 0px; /* Reduced from 100px */
+        }
+
         .contact-container {
             display: flex;
             flex-wrap: wrap;
@@ -1197,20 +1211,10 @@ Machines, Circuit Theory, Electronics, Computer Communications, OS Concepts, Sof
                     </div>
                 </div>
             </div>
-
-            <div class="scroll-controls">
-                <button class="scroll-btn" id="scrollLeft" aria-label="Scroll left">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="scroll-btn" id="scrollRight" aria-label="Scroll right">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
             
             <div class="view-all-container fade-in">
                 <a href="projects.html" class="btn">View All Projects</a>
             </div>
-
         </div>
     </section>
 

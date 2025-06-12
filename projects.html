@@ -59,7 +59,9 @@
 
         /* Button styles */
         .btn {
-            display: inline-block;
+            display: inline-flex; /* Changed to flex for centering */
+            align-items: center;
+            justify-content: center;
             background: var(--accent);
             color: white;
             padding: 12px 30px;
@@ -71,6 +73,7 @@
             cursor: pointer;
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            gap: 10px; /* Space between icon and text */
         }
 
         .btn:hover {
@@ -83,7 +86,6 @@
             background: transparent;
             border: 2px solid var(--accent);
             color: var(--accent);
-            margin-left: 15px;
         }
 
         .btn-outline:hover {
@@ -314,124 +316,6 @@
             color: white;
         }
         
-        /* Project details modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: var(--secondary);
-            width: 90%;
-            max-width: 800px;
-            border-radius: 15px;
-            padding: 40px;
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: var(--light);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .close-modal:hover {
-            color: var(--accent);
-        }
-        
-        .modal-header {
-            margin-bottom: 20px;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .modal-subtitle {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .modal-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .modal-img {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(45deg, #1e293b, #334155);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.1);
-            font-size: 4rem;
-            font-weight: bold;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .modal-text {
-            color: #cbd5e1;
-            line-height: 1.8;
-        }
-        
-        .modal-tech {
-            margin: 20px 0;
-        }
-        
-        .modal-features {
-            margin: 20px 0;
-        }
-        
-        .modal-features ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .modal-features li {
-            margin-bottom: 8px;
-        }
-        
-        .modal-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
         /* ===== FOOTER ===== */
         footer {
             background: rgba(15, 23, 42, 0.9);
@@ -494,12 +378,8 @@
         
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-img {
-                height: 250px;
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
 
@@ -534,6 +414,10 @@
             
             .projects-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .project-links {
+                flex-direction: column;
             }
         }
 
@@ -576,7 +460,7 @@
     <section class="projects-page">
         <div class="container">
             <h1 class="section-title fade-in">My Projects</h1>
-            <p class="section-subtitle fade-in">Explore my portfolio of engineering projects showcasing skills in embedded systems, digital design, and machine learning</p>
+            <p class="section-subtitle fade-in"></p>
             
             <!-- Project Filter -->
             <div class="filter-container fade-in">
@@ -604,8 +488,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="1">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -625,8 +512,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="2">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -646,8 +536,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="3">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -667,8 +560,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="4">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -688,8 +584,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="5">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -709,8 +608,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="6">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -730,8 +632,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="7">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -751,8 +656,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="8">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -772,8 +680,11 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="btn" data-project="9">View Details</a>
-                            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn">View Details</a>
+                            <!-- Updated GitHub button with icon -->
+                            <a href="#" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -786,59 +697,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Project Detail Modal -->
-    <div class="modal-overlay" id="projectModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="modal-header">
-                <h2 class="modal-title">Embedded Systems Control</h2>
-                <p class="modal-subtitle">Environmental Monitoring System</p>
-            </div>
-            
-            <div class="modal-body">
-                <div class="modal-img">EMBED</div>
-                
-                <div class="modal-details">
-                    <div class="modal-text">
-                        <p>This project involved designing and implementing an embedded control system for environmental monitoring. The system collects data from multiple sensors (temperature, humidity, air quality) and transmits it to a central hub for analysis.</p>
-                        
-                        <div class="modal-features">
-                            <h3>Key Features:</h3>
-                            <ul>
-                                <li>Real-time environmental data collection</li>
-                                <li>Wireless data transmission using LoRa technology</li>
-                                <li>Remote monitoring dashboard</li>
-                                <li>Alert system for threshold breaches</li>
-                                <li>Energy-efficient design with sleep modes</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="modal-tech">
-                            <h3>Technologies Used:</h3>
-                            <div class="project-tech">
-                                <span class="tech-tag">C++</span>
-                                <span class="tech-tag">Arduino</span>
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Raspberry Pi</span>
-                                <span class="tech-tag">LoRa</span>
-                                <span class="tech-tag">DHT22</span>
-                                <span class="tech-tag">MQ135</span>
-                            </div>
-                        </div>
-                        
-                        <div class="modal-links">
-                            <a href="#" class="btn" target="_blank">View on GitHub</a>
-                            <a href="#" class="btn btn-outline">Download Documentation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer>
@@ -936,42 +794,6 @@
                     }
                 });
             });
-        });
-        
-        // ===== PROJECT MODAL =====
-        const modal = document.getElementById('projectModal');
-        const closeModalBtn = document.getElementById('closeModal');
-        const viewDetailsBtns = document.querySelectorAll('[data-project]');
-        
-        // Open modal
-        viewDetailsBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // In a real implementation, you would fetch project data based on data-project attribute
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-        
-        // Close modal
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Enable scrolling
-        });
-        
-        // Close modal when clicking outside content
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
         });
     </script>
 </body>
